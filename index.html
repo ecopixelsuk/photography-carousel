@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    gap: 8px;
+    animation: scroll 32s linear infinite;
+}
+
+.slide {
+    width: 25vw;
+    max-width: 400px;
+    min-width: 200px;
+    aspect-ratio: 2 / 3;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/*
+   We have 8 unique images followed by
+   an exact duplicate of those 8 images.
+   Moving exactly half the track creates
+   the seamless loop.
+*/
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .slide {
+        width: 33.333vw;
+    }
+
+    .track {
+        gap: 6px;
+        animation-duration: 28s;
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+
+    .slide {
+        width: 50vw;
+    }
+
+    .track {
+        gap: 5px;
+        animation-duration: 24s;
+    }
+}
+
+/* Pause while hovering */
+.carousel:hover .track {
+    animation-play-state: paused;
+}
+</style>
+</head>
+
+<body>
+
+<div class="carousel">
+
+<div class="track">
+
+<!-- ========================= -->
+<!-- FIRST SET OF 8 PHOTOS     -->
+<!-- ========================= -->
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1200&fit=crop" alt="">
+</div>
+
+
+<!-- ========================= -->
+<!-- DUPLICATE SET             -->
+<!-- ========================= -->
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=1200&fit=crop" alt="">
+</div>
+
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1200&fit=crop" alt="">
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
